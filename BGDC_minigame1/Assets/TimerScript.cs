@@ -20,7 +20,7 @@ public class TimerScript : MonoBehaviour
     {
         float t = Time.time - startTime;
 
-        string seconds = (60 - (float)t).ToString("f2");
+        string seconds = (60 - (float)t).ToString("f0");
 
         if (t < 60)
         {
