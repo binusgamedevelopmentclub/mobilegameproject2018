@@ -1,16 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ButtonMap : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+	private int angryPar;
+    private int NoisePar;
+
+    void GameOver()
+    { }
+
 	void Update () {
-		
+        angryPar = 1;
+        NoisePar=0;
+        while (angryPar < 4) {
+
+
+        }
+
+        if (angryPar == 4) {
+            GameOver();
+        }
+
 	}
 }
