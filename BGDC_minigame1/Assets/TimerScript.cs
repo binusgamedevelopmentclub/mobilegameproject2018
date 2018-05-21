@@ -28,7 +28,7 @@ public class TimerScript : MonoBehaviour
         }
         else
         {
-            timerText.text = "0.00";
+            timerText.text = "0";
         }
     }
 }
