@@ -25,7 +25,6 @@ public class TimerScript : MonoBehaviour
     {
         if (reset == true && play == true)
         {
-            time = 60;
             reset = false;
         }
 
@@ -60,6 +59,7 @@ public class TimerScript : MonoBehaviour
     public void ClickReset()
     {
         timerText.text = "60";
+        time = 60;
         reset = true;
         play = false;
     }
