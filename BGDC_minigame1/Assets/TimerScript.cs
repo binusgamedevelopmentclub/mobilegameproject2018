@@ -7,28 +7,60 @@ public class TimerScript : MonoBehaviour
 {
 
     public Text timerText;
-    private float startTime;
+    float time;
+    bool play;
+    bool reset;
 
     // Use this for initialization
     void Start()
     {
-        startTime = Time.time;
+        timerText.text = "60";
+        time = 60;
+        play = false;
+        reset = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float t = Time.time - startTime;
-
-        string seconds = (60 - (float)t).ToString("f0");
-
-        if (t < 60)
+        if (reset == true && play == true)
         {
-            timerText.text = seconds;
+            time = 60;
+            reset = false;
+        }
+
+        if (play == true)
+        {
+            time -= Time.deltaTime;
+
+            string seconds = (time).ToString("f0");
+
+            if (time > 0)
+            {
+                timerText.text = seconds;
+            }
+            else
+            {
+                timerText.text = "0";
+            }
+        }
+    }
+    public void ClickPlay()
+    {
+        if (play == true)
+        {
+            play = false;
         }
         else
         {
-            timerText.text = "0";
+            play = true;
         }
+    }
+
+    public void ClickReset()
+    {
+        timerText.text = "60";
+        reset = true;
+        play = false;
     }
 }
