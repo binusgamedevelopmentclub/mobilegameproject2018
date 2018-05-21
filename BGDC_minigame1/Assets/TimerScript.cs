@@ -9,7 +9,6 @@ public class TimerScript : MonoBehaviour
     public Text timerText;
     float time;
     bool play;
-    bool reset;
 
     // Use this for initialization
     void Start()
@@ -17,17 +16,11 @@ public class TimerScript : MonoBehaviour
         timerText.text = "60";
         time = 60;
         play = false;
-        reset = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (reset == true && play == true)
-        {
-            reset = false;
-        }
-
         if (play == true)
         {
             time -= Time.deltaTime;
@@ -60,7 +53,6 @@ public class TimerScript : MonoBehaviour
     {
         timerText.text = "60";
         time = 60;
-        reset = true;
         play = false;
     }
 }
