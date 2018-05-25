@@ -1,24 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
 
     public Text timerText;
-    private float startTime;
-
+    public float startTime;
+    public float t;
     // Use this for initialization
     void Start()
     {
-        startTime = Time.time;
+        startTime = Time.deltaTime;
     }
-
     // Update is called once per frame
     void Update()
     {
-        float t = Time.time - startTime;
+        t = Time.deltaTime - startTime;
 
         string seconds = (60 - (float)t).ToString("f0");
 
