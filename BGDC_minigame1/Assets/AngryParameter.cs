@@ -26,11 +26,6 @@ public class AngryParameter : MonoBehaviour {
             ResetTimerMahasiswa();
             noisePar++;
        }
-		if (time == 5) {
-			//Change Lecturer state to Angry
-			//AngryLecturer();
-			//SpreadOut();
-		}
   
     }
 
@@ -60,16 +55,15 @@ public class AngryParameter : MonoBehaviour {
         
         switch (random) {
             case 1:
-                if (Timer.t % 3 == 0) { 
-					SpawnNoisystudent();
+                if (Timer.t % 3 == 0) { SpawnNoisystudent();
+                    
                     NoiseStudent(x);
                     x = 0;
                     Debug.Log(score);
                     Debug.Log(noisePar);
 
                 }  break;
-             case 2: if (Timer.t % 2 == 0) { 
-					SpawnNoisystudent();
+             case 2: if (Timer.t % 2 == 0) { SpawnNoisystudent();
                     NoiseStudent(x);
                     x = 0;
                     Debug.Log(score);
@@ -82,7 +76,7 @@ public class AngryParameter : MonoBehaviour {
             GameOver();
         }
     }
-    void Start()
+     void Start()
     {
         Timer.startTime = Time.deltaTime;
     }
