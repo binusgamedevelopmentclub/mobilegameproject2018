@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
 
+    public GameObject pauseMenuUI;
     public Text timerText;
     public float startTime;
     public float t;
@@ -39,18 +40,18 @@ public class TimerScript : MonoBehaviour
     }
     public void ClickPlay()
     {
-        if (play == true)
-        {
-            play = false;
-        }
-        else
-        {
-            play = true;
-        }
+        pauseMenuUI.SetActive(false);
+        play = true;
+    }
+    public void ClickPause()
+    {
+        pauseMenuUI.SetActive(true);
+        play = false;
     }
 
     public void ClickReset()
     {
+        pauseMenuUI.SetActive(false);
         timerText.text = "60";
         time = 60;
         play = false;
