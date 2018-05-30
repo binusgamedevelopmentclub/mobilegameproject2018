@@ -60,7 +60,7 @@ public class AngryParameter : MonoBehaviour {
         
         switch (random) {
             case 1:
-                if (Timer.t % 3 == 0) {
+                if (Timer.time % 3 == 0) {
                     SpawnNoisystudent();
                     NoiseStudent(x);
                     x = 0;
@@ -68,7 +68,7 @@ public class AngryParameter : MonoBehaviour {
                     Debug.Log(noisePar);
 
                 }  break;
-             case 2: if (Timer.t % 2 == 0) {
+             case 2: if (Timer.time % 2 == 0) {
                     SpawnNoisystudent();
                     NoiseStudent(x);
                     x = 0;
@@ -78,13 +78,13 @@ public class AngryParameter : MonoBehaviour {
 
         }
 
-        if (Timer.t == 0 || noisePar > 5) {   //akan gameover jika waktu sudah habis atau mahasiswa yang keluar 5
+        if (Timer.time <= 0 || noisePar > 5) {   //akan gameover jika waktu sudah habis atau mahasiswa yang keluar 5
             GameOver();
         }
     }
     void Start()
     {
-        Timer.startTime = Time.deltaTime;
+        
     }
 
     void Update () {

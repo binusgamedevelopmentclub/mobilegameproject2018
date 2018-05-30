@@ -3,26 +3,20 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-
     public GameObject pauseMenuUI;
     public Text timerText;
-    public float startTime;
-    public float t;
-	float time;
-	bool play;
+	public float time;
+	private bool play;
     // Use this for initialization
     void Start()
     {
-
         timerText.text = "60";
         time = 60;
         play = false;
-		startTime = Time.deltaTime;
     }
     // Update is called once per frame
     void Update()
     {
-        t = Time.deltaTime - startTime;
         if (play == true)
         {
             time -= Time.deltaTime;
