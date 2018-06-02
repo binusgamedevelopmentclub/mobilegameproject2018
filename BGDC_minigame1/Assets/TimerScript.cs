@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
+    public GameObject GameOverUI;
     public Text timerText;
 	public float time;
 	private bool play;
@@ -12,7 +12,7 @@ public class TimerScript : MonoBehaviour
     {
         timerText.text = "60";
         time = 60;
-        play = false;
+        play = true;
     }
     // Update is called once per frame
     void Update()
@@ -29,25 +29,32 @@ public class TimerScript : MonoBehaviour
             else
             {
                 timerText.text = "0";
+                GameOverUI.SetActive(true);
             }
         }
     }
     public void ClickPlay()
     {
-        pauseMenuUI.SetActive(false);
         play = true;
     }
     public void ClickPause()
     {
-        pauseMenuUI.SetActive(true);
         play = false;
     }
-
     public void ClickReset()
     {
-        pauseMenuUI.SetActive(false);
+        timerText.text = "60";
+        time = 60;
+        play = true;
+    }
+    public void ClickEnd()
+    {
         timerText.text = "60";
         time = 60;
         play = false;
+    }
+    public void ClickDebug()
+    {
+        time = 0;
     }
 }
